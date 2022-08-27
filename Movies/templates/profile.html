@@ -1,0 +1,110 @@
+{% extends 'base.html' %}
+  
+{% block title %}Login{% endblock %}
+  
+{% block content %}
+ 
+   {% if user.is_authenticated %}
+     
+      <section class="container py-4">
+        <div id="carouselExampleInterval" class="carousel slide" data-bs-ride="carousel">
+            <div class="carousel-inner">
+              <div class="carousel-item active" data-bs-interval="10000">
+                <img src="https://via.placeholder.com/728x200.png?text=akash+badole.Trying+to+create+Dashboard+Movie+1" class="d-block w-100" alt="">
+              </div>
+              <div class="carousel-item" data-bs-interval="2000">
+                <img src="https://via.placeholder.com/728x200.png?text=akash+badole.Trying+to+create+Dashboard+Movie+2" class="d-block w-100" alt="">
+              </div>
+              <div class="carousel-item">
+                <img src="https://via.placeholder.com/728x200.png?text=akash+badole.Trying+to+create+Dashboard+Movie+3" class="d-block w-100" alt="">
+              </div>
+            </div>
+            <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleInterval" data-bs-slide="prev">
+              <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+              <span class="visually-hidden">Previous</span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleInterval" data-bs-slide="next">
+              <span class="carousel-control-next-icon" aria-hidden="true"></span>
+              <span class="visually-hidden">Next</span>
+            </button>
+          </div>
+    </section>
+    <section class="container py-4">
+
+      <div class="row">
+          <div class="col-xs-10 col-sm-8">
+              <h4>last 30 days report</h4>
+              <canvas id="myChart" style="width:100%;border: 1px solid black ;"></canvas>
+              <hr />
+              {% comment %} {% for item in MyMovies %}
+    <tr> 
+         <td>{{ item.Name }}</td>
+         <td>{{ item.Cast }}</td>
+         <td>{{ item.Language }}</td>
+         <td>{{ item.Genre }}</td>
+         <td>{{ item.Year }}</td>
+         <td>{{ item.Language }}</td>
+         <td>{{ item.ReleaseDate }}</td>
+    </tr>
+       {% endfor %} {% endcomment %}
+          
+       <h1 style="border-bottom:1px solid black;">Bookmyshow Movie Data</h1>
+       {% if Movie %}
+        {% comment %} <h1>Show Data</h1> {% endcomment %}
+        {% comment %} <h3>{{Movie}}</h3> {% endcomment %}
+        <table   class="table table-striped">
+            <tr>
+                <th>No</th>
+                <th>Name</th>
+                <th>Cast</th>
+                <th>Language</th>
+                <th>Genre</th>
+                <th>Year</th>
+                <th>ReleaseDate</th>
+            </tr>
+        <tr>
+            {% for item in Movie %}
+            <td>{{ item.id }}</td>
+            <td>{{ item.Name }}</td>
+            <td>{{ item.Cast }}</td>
+            <td>{{ item.Genre }}</td>
+            <td>{{ item.Year }}</td>
+            <td>{{ item.Language }}</td>
+            <td>{{ item.ReleaseDate }}</td>
+        </tr>
+            {% endfor %}
+       </table>
+       {% else %}
+        <h1>No Data</h1>
+       {% endif %}
+      
+      
+      </div>
+          <div class="col-xs-10 col-sm-4">
+            <div>
+              <h2 class='py-4'>Hi welcome {{ user.username }}!</h2>
+              <a href="/signout" class="btn btn-danger">Logout</a>
+            </div>
+           
+              <div class="list-group">
+            
+                  <h4 class="py-4">News</h4>
+  
+                  <a href="#" class="list-group-item list-group-item-action">A second link item</a>
+                  <a href="#" class="list-group-item list-group-item-action">A third link item</a>
+                  <a href="#" class="list-group-item list-group-item-action">A fourth link item</a>
+                  <a class="list-group-item list-group-item-action ">A fifth link item</a>
+                  <a href="#" class="list-group-item list-group-item-action">A Sixth link item</a>
+                  <a href="#" class="list-group-item list-group-item-action">A Eight link item</a>
+                  <a href="#" class="list-group-item list-group-item-action">A Ninth link item</a>
+                  <a  href="#" class="list-group-item list-group-item-action ">A ten link item</a>
+                  <a  href="#" class="list-group-item list-group-item-action ">A ten link item</a>
+              </div>
+          </div>
+      </div>
+  </section>
+    {% else %}
+      <a href="/signin" class="btn btn-primary"><span class="glyphicon glyphicon-log-in"></span>Login</a> 
+      <a href="/signup" class="btn btn-success">Signup</a>
+    {% endif %}
+{% endblock %}
