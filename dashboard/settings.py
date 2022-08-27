@@ -25,7 +25,11 @@ SECRET_KEY = 'django-insecure-)+oe@*q63c)3p!^975db2r17w=^n%p67%oq*!hiy&0!@@xk8+6
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = [
+    '0.0.0.0',
+    'bookmymoviedjangoapp.herokuapp.com', # your herokuapp url
+    '127.0.0.1'
+]
 
 
 # Application definition
