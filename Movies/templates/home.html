@@ -3,7 +3,67 @@
 {% block title %}Login{% endblock %}
   
 {% block content %}
-   <h2 class="text-center text-dark p-4" >Welcome to Bookmyshow dashboard</h2>
+<div class=" bgsection">
+  <div class="container sliderdesign">
+    <div class="row  align-items-center ">
+      <div class="col-lg-5 aos-init aos-animate" data-aos="fade-up">
+          <h1>Welcome to Bookmyshow dashboard</h1>
+          <p class="page-header-ui-text mb-5">BookMyShow offers showtimes, movie tickets, reviews, trailers, concert tickets and events near city . Also features promotional offers, coupons and mobile ...
+          </p>
+          <div class="d-flex flex-column flex-sm-row">
+              <a class="btn btn-lg btn-primary fw-500 me-sm-3 mb-3 mb-sm-0 shadow rounded" href="#"  data-bs-toggle="tooltip" data-bs-placement="top" data-bs-title="Akash badole - visit https://akashbadole.netlify.app/"> 
+                 Know More 
+                
+              </a>
+              <a class="btn btn-lg btn-primary-soft text-primary fw-500 shadow rounded " href="#" target="_blank"> login</a>
+          </div>
+      </div>
+      <div class="col-lg-7 d-none d-lg-block aos-init aos-animate " data-aos="fade-up" data-aos-delay="100"> 
+        <img src="/static/img/home.jpg" width="600px" height="auto" class="imageSize">
+      </div>
+  </div>
+  </div>
+</div>
+
+
+    <div class=" py-5 bg-light">
+      <div class="container">
+        <h1 class="py-4">Movies - Latest</h1>
+        <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
+          <div class="col">
+            <div class="card shadow-sm">
+              <img class="shadow rounded" src="/static/img/spider-mannowayhome.jpg"> 
+  
+              <div class="card-body">
+                <p class="card-text">Spider-Man: No Way Home is a 2021 American superhero film based on the Marvel Comics character Spider-Man, co-produced by Columbia Pictures...</p>
+                
+              </div>
+            </div>
+          </div>
+          <div class="col">
+            <div class="card shadow-sm">
+              <img class="shadow rounded" src="/static/img/thorloveandthunder.jpg"> 
+  
+              <div class="card-body">
+                <p class="card-text">Thor: Love and Thunder is a 2022 American superhero film based on Marvel Comics featuring the character Thor, produced by Marvel Studios and distributed by ...</p>
+                
+              </div>
+            </div>
+          </div>
+          <div class="col">
+            <div class="card shadow-sm">
+              <img class="shadow rounded" src="/static/img/doctorstrangeinthemultiverseofmadness.jpg"> 
+              <div class="card-body">
+                <p class="card-text">TDoctor Strange in the Multiverse of Madness is a 2022 American superhero film based on Marvel Comics featuring the character Doctor Strange.</p>
+                
+              </div>
+            </div>
+          </div>
+  
+
+        </div>
+      </div>
+    </div>
 
 
 
@@ -34,6 +94,7 @@
                         <span class="visually-hidden">Next</span>
                       </button>
                     </div>
+
                     <h4 class="my-4">Faqs</h4>
                     <div class="accordion" id="accordionExample">
                       <div class="accordion-item">
@@ -74,7 +135,9 @@
                       </div>
                     </div>
               </section>
+              
             </div>
+
             <div class="col-xs-10 col-sm-4">
               {% if user.is_authenticated %}
               Hi {{ user.username }}!

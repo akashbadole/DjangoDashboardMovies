@@ -1,0 +1,46 @@
+.sliderdesign {
+
+    position: relative;
+    padding-top: 8rem;
+    padding-bottom: 8rem;
+    width: 100vw !important;
+
+
+}
+
+.bgsection {
+    background: #0dcaf029;
+}
+
+.imageSize {
+    border-radius: 123px;
+    -webkit-box-shadow: 5px 8px 5px 0px rgba(0, 220, 176, 1);
+    -moz-box-shadow: 5px 8px 5px 0px rgba(0, 220, 176, 1);
+    box-shadow: 5px 8px 5px 0px rgba(0, 220, 176, 1);
+}
+
+.custom-tooltip {
+    --bs-tooltip-bg: var(--bs-primary);
+  }
+
+
+  .form-signin {
+    max-width: 330px;
+    padding: 15px;
+  }
+  
+  .form-signin .form-floating:focus-within {
+    z-index: 2;
+  }
+  
+  .form-signin input[type="email"] {
+    margin-bottom: -1px;
+    border-bottom-right-radius: 0;
+    border-bottom-left-radius: 0;
+  }
+  
+  .form-signin input[type="password"] {
+    margin-bottom: 10px;
+    border-top-left-radius: 0;
+    border-top-right-radius: 0;
+  }
