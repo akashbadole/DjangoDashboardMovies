@@ -3,7 +3,7 @@ from django.contrib.auth.forms import UserCreationForm
 from django.contrib.auth import authenticate, login
 from django.contrib.auth.forms import AuthenticationForm
 from django.contrib.auth import logout
-from django.shortcuts import HttpResponseRedirect
+from django.shortcuts import HttpResponseRedirect, HttpResponse
 
 from Movies.models import Movies
   
@@ -53,11 +53,15 @@ def profile(request):
     return render(request, 'profile.html',{'Movie': MyMovies})
     
 def Moviesinfo(request, id):
-    MyMovies = Movies.objects.get(id=1)
-    print("Myoutput1",MyMovies)
-    return render(request,'Moviesinfo.html',{'Movies': MyMovies})
+    MyMovieshi = Movies.objects.get(id=1)
+  
+    blogs = Movies.objects.filter().values_list('id', flat=True)
+    print(blogs)
 
+    return render(request,'Moviesinfo.html',{'Movies': MyMovieshi})
+    # return HttpResponse(id)
 
+ 
 
    
 def signout(request):

@@ -36,22 +36,11 @@
               <h4>last 30 days report</h4>
               <canvas id="myChart" style="width:100%;border: 1px solid black ;"></canvas>
               <hr />
-              {% comment %} {% for item in MyMovies %}
-    <tr> 
-         <td>{{ item.Name }}</td>
-         <td>{{ item.Cast }}</td>
-         <td>{{ item.Language }}</td>
-         <td>{{ item.Genre }}</td>
-         <td>{{ item.Year }}</td>
-         <td>{{ item.Language }}</td>
-         <td>{{ item.ReleaseDate }}</td>
-    </tr>
-       {% endfor %} {% endcomment %}
           
        <h1 style="border-bottom:1px solid black;">Bookmyshow Movie Data</h1>
-       {% if Movieinfo %}
-        {% comment %} <h1>Show Data</h1> {% endcomment %}
-        {% comment %} <h3>{{Movieinfo}}</h3> {% endcomment %}
+       {% if MyMovieshi %}
+        <h1>Show Data</h1>
+        <h3>{{MyMovieshi}}</h3>
         <table   class="table table-striped">
             <tr>
                 <th>No</th>
@@ -63,7 +52,7 @@
                 <th>ReleaseDate</th>
             </tr>
         <tr>
-            {% for i in Movieinfo %}
+            {% for i in MyMovieshi %}
             <td>{{ i.id }}</td>
             <td>{{ i.Name }}</td>
             <td>{{ i.Cast }}</td>
